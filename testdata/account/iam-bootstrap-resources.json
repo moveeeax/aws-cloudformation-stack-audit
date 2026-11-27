@@ -1,0 +1,31 @@
+{
+  "StackResources": [
+    {
+      "StackName": "iam-bootstrap",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/iam-bootstrap/55555555-5555-5555-5555-555555555555",
+      "LogicalResourceId": "BreakGlassRole",
+      "PhysicalResourceId": "iam-bootstrap-BreakGlassRole-1QWERTY",
+      "ResourceType": "AWS::IAM::Role",
+      "Timestamp": "2023-05-02T07:01:00.000Z",
+      "ResourceStatus": "CREATE_COMPLETE"
+    },
+    {
+      "StackName": "iam-bootstrap",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/iam-bootstrap/55555555-5555-5555-5555-555555555555",
+      "LogicalResourceId": "BreakGlassPolicy",
+      "PhysicalResourceId": "arn:aws:iam::123456789012:policy/AdministratorAccessCopy",
+      "ResourceType": "AWS::IAM::ManagedPolicy",
+      "Timestamp": "2026-11-17T18:21:00.000Z",
+      "ResourceStatus": "UPDATE_COMPLETE"
+    },
+    {
+      "StackName": "iam-bootstrap",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/iam-bootstrap/55555555-5555-5555-5555-555555555555",
+      "LogicalResourceId": "ReadOnlyRole",
+      "PhysicalResourceId": "iam-bootstrap-ReadOnlyRole-2ASDFGH",
+      "ResourceType": "AWS::IAM::Role",
+      "Timestamp": "2023-05-02T07:01:00.000Z",
+      "ResourceStatus": "CREATE_COMPLETE"
+    }
+  ]
+}

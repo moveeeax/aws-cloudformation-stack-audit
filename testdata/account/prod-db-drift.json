@@ -1,0 +1,8 @@
+{
+  "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/prod-db/11111111-1111-1111-1111-111111111111",
+  "StackDriftDetectionId": "7b9f0d2e-0000-4a11-9a0e-9b0c0d0e0f10",
+  "StackDriftStatus": "DRIFTED",
+  "DetectionStatus": "DETECTION_COMPLETE",
+  "DriftedStackResourceCount": 3,
+  "Timestamp": "2026-11-25T03:11:00.000Z"
+}

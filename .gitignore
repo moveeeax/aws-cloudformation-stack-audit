@@ -1,0 +1,14 @@
+# Built binary, anchored to the repo root on purpose: a bare pattern would also
+# match the cmd/aws-cloudformation-stack-audit/ source directory.
+/aws-cloudformation-stack-audit
+/dist/
+/dumps/
+
+# Go test and coverage artefacts
+/*.test
+/coverage.out
+/coverage.html
+
+# Fixtures are part of the test suite, never ignored.
+!testdata/**
+!examples/**

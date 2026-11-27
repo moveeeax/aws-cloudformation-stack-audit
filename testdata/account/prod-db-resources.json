@@ -1,0 +1,31 @@
+{
+  "StackResources": [
+    {
+      "StackName": "prod-db",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/prod-db/11111111-1111-1111-1111-111111111111",
+      "LogicalResourceId": "Database",
+      "PhysicalResourceId": "prod-db-database-1a2b3c",
+      "ResourceType": "AWS::RDS::DBInstance",
+      "Timestamp": "2026-10-28T10:00:00.000Z",
+      "ResourceStatus": "UPDATE_COMPLETE"
+    },
+    {
+      "StackName": "prod-db",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/prod-db/11111111-1111-1111-1111-111111111111",
+      "LogicalResourceId": "DbSubnetGroup",
+      "PhysicalResourceId": "prod-db-dbsubnetgroup-9z8y",
+      "ResourceType": "AWS::RDS::DBSubnetGroup",
+      "Timestamp": "2024-02-11T08:16:40.000Z",
+      "ResourceStatus": "CREATE_COMPLETE"
+    },
+    {
+      "StackName": "prod-db",
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/prod-db/11111111-1111-1111-1111-111111111111",
+      "LogicalResourceId": "BackupBucket",
+      "PhysicalResourceId": "prod-db-backups-123456789012",
+      "ResourceType": "AWS::S3::Bucket",
+      "Timestamp": "2024-02-11T08:15:02.000Z",
+      "ResourceStatus": "CREATE_COMPLETE"
+    }
+  ]
+}

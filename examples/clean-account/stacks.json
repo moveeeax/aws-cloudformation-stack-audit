@@ -1,0 +1,19 @@
+{
+  "Stacks": [
+    {
+      "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/platform-core/aaaaaaaa-0000-0000-0000-000000000001",
+      "StackName": "platform-core",
+      "Description": "VPC, subnets and the shared RDS instance",
+      "CreationTime": "2026-03-04T09:12:00.000Z",
+      "LastUpdatedTime": "2026-11-18T07:44:00.000Z",
+      "StackStatus": "UPDATE_COMPLETE",
+      "EnableTerminationProtection": true,
+      "RoleARN": "arn:aws:iam::123456789012:role/cfn-deploy",
+      "DriftInformation": {
+        "StackDriftStatus": "IN_SYNC",
+        "LastCheckTimestamp": "2026-11-26T03:00:00.000Z"
+      },
+      "Tags": [{ "Key": "owner", "Value": "platform" }]
+    }
+  ]
+}

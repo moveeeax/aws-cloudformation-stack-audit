@@ -1,0 +1,63 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ["1.22", "1.23", "stable"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+          cache: true
+
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "not gofmt'd:"; echo "$unformatted"; exit 1
+          fi
+
+      - run: go vet ./...
+
+      - run: go build ./...
+
+      - run: go test -race ./...
+
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: true
+
+      - run: go build -o aws-cloudformation-stack-audit ./cmd/aws-cloudformation-stack-audit
+
+      - name: clean account exits 0
+        run: ./aws-cloudformation-stack-audit --from-files examples/clean-account
+
+      - name: findings exit 1 and --json stays valid
+        run: |
+          set +e
+          ./aws-cloudformation-stack-audit --from-files testdata/account --json > findings.json
+          code=$?
+          set -e
+          test "$code" = "1" || { echo "expected exit 1, got $code"; exit 1; }
+          jq -e 'length > 0 and all(.[]; has("severity") and has("check"))' findings.json
